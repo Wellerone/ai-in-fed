@@ -1,23 +1,52 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
+// NAVBAR
+function Navbar() {
+  return (
+    <nav className="bg-fedgreen text-white px-4 py-3 shadow-md sticky top-0 z-10">
+      <div className="flex items-center justify-between max-w-6xl mx-auto">
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src="/FED2.jpg"
+            alt="Logo FED"
+            className="h-10 w-auto object-contain"
+          />
+          <span className="font-bold text-lg tracking-wide">AI in FED</span>
+        </Link>
+        <div className="space-x-4 text-sm sm:text-base">
+          <Link to="/materiali" className="hover:text-fedpink">Materiali</Link>
+          <Link to="/promptoteca" className="hover:text-fedpink">Promptoteca</Link>
+          <Link to="/area-docenti" className="hover:text-fedpink">Area docenti</Link>
+          <Link to="/eventi" className="hover:text-fedpink">Eventi</Link>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+
+// HOME
 function Home() {
   return (
-    <div className="p-4 text-center">
-      <h1 className="text-3xl font-bold mb-2">AI in FED</h1>
-      <p className="mb-6 text-gray-600">
+    <div className="p-6 text-center">
+      <h1 className="text-5xl font-bold text-fedgreen underline mb-2">
+        AI in FED <span role="img" aria-label="razzo">🚀</span>
+      </h1>
+      <p className="text-fedgreen text-lg mb-6">
         Una piattaforma per docenti sulle potenzialità educative dell'intelligenza artificiale.
       </p>
-      <div className="space-y-2">
-        <Link to="/materiali" className="block border rounded p-2 bg-white shadow">Materiali</Link>
-        <Link to="/promptoteca" className="block border rounded p-2 bg-white shadow">Promptoteca</Link>
-        <Link to="/area-docenti" className="block border rounded p-2 bg-white shadow">Area docenti</Link>
-        <Link to="/eventi" className="block border rounded p-2 bg-white shadow">Eventi</Link>
+      <div className="max-w-md mx-auto space-y-3">
+        <Link to="/materiali" className="block border rounded p-3 bg-white shadow hover:bg-fedgreen hover:text-white transition">Materiali</Link>
+        <Link to="/promptoteca" className="block border rounded p-3 bg-white shadow hover:bg-fedgreen hover:text-white transition">Promptoteca</Link>
+        <Link to="/area-docenti" className="block border rounded p-3 bg-white shadow hover:bg-fedgreen hover:text-white transition">Area docenti</Link>
+        <Link to="/eventi" className="block border rounded p-3 bg-white shadow hover:bg-fedgreen hover:text-white transition">Eventi</Link>
       </div>
     </div>
   );
 }
 
+// MATERIALI
 function Materiali() {
   const materiali = [
     {
@@ -41,8 +70,8 @@ function Materiali() {
   ];
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">📚 Materiali didattici</h2>
+    <div className="p-6 max-w-3xl mx-auto">
+      <h2 className="text-2xl font-semibold text-fedgreen mb-4">📚 Materiali didattici</h2>
       <ul className="space-y-4">
         {materiali.map((item, index) => (
           <li key={index} className="border rounded p-4 shadow bg-white">
@@ -56,6 +85,7 @@ function Materiali() {
   );
 }
 
+// PROMPTOTECA
 function Promptoteca() {
   const promptList = [
     {
@@ -79,8 +109,8 @@ function Promptoteca() {
   ];
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">🧠 Promptoteca</h2>
+    <div className="p-6 max-w-3xl mx-auto">
+      <h2 className="text-2xl font-semibold text-fedgreen mb-4">🧠 Promptoteca</h2>
       <ul className="space-y-4">
         {promptList.map((prompt, index) => (
           <li key={index} className="border rounded p-4 shadow bg-white">
@@ -94,6 +124,7 @@ function Promptoteca() {
   );
 }
 
+// AREA DOCENTI
 function AreaDocenti() {
   const [titolo, setTitolo] = useState("");
   const [descrizione, setDescrizione] = useState("");
@@ -113,8 +144,8 @@ function AreaDocenti() {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">👩‍🏫 Condividi una proposta</h2>
+    <div className="p-6 max-w-2xl mx-auto">
+      <h2 className="text-2xl font-semibold text-fedgreen mb-4">👩‍🏫 Condividi una proposta</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
@@ -139,7 +170,7 @@ function AreaDocenti() {
         />
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded shadow"
+          className="bg-fedgreen hover:bg-fedpink text-white px-4 py-2 rounded shadow"
         >
           Invia proposta
         </button>
@@ -149,13 +180,16 @@ function AreaDocenti() {
   );
 }
 
+// EVENTI
 function Eventi() {
-  return <div className="p-4">📅 Sezione Eventi – in arrivo</div>;
+  return <div className="p-6 text-fedgreen text-lg">📅 Sezione Eventi – in arrivo</div>;
 }
 
+// APP
 export default function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/materiali" element={<Materiali />} />
@@ -166,4 +200,3 @@ export default function App() {
     </Router>
   );
 }
-
