@@ -7,11 +7,7 @@ function Navbar() {
     <nav className="bg-fedgreen text-white px-4 py-3 shadow-md sticky top-0 z-10">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         <Link to="/" className="flex items-center gap-3">
-          <img
-            src="/FED2.jpg"
-            alt="Logo FED"
-            className="h-10 w-auto object-contain"
-          />
+          <img src="/FED_logo.png" alt="Logo FED" className="h-10 w-auto object-contain" />
           <span className="font-bold text-lg tracking-wide">AI in FED</span>
         </Link>
         <div className="space-x-4 text-sm sm:text-base">
