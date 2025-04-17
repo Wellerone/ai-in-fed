@@ -3,12 +3,12 @@
   "name": "Frontiere Educative Didattiche",
   "icons": [
     {
-      "src": "logo192_v2.png",
+      "src": "LogoFED192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512_v2.png",
+      "src": "LogoFED512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
