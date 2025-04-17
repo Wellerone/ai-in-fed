@@ -8,7 +8,7 @@ function Navbar() {
       <div className="max-w-6xl mx-auto flex flex-col items-center space-y-2">
         <div className="flex justify-center items-center gap-3">
           <img
-            src="/logo512_v2.png"
+            src="/logo192_v2.png"
             alt="Logo FED"
             className="h-12 w-auto object-contain"
           />
