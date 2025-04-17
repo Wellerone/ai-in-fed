@@ -4,12 +4,16 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 // NAVBAR
 function Navbar() {
   return (
-    <nav className="bg-fedgreen text-white px-4 py-3 shadow-md sticky top-0 z-10">
-      <div className="flex items-center justify-between max-w-6xl mx-auto">
-        <Link to="/" className="flex items-center gap-3">
-          <img src="/FED_logo.png" alt="Logo FED" className="h-10 w-auto object-contain" />
-          <span className="font-bold text-lg tracking-wide">AI in FED</span>
-        </Link>
+    <nav className="bg-fedgreen text-white px-4 py-4 shadow-md sticky top-0 z-10">
+      <div className="max-w-6xl mx-auto flex flex-col items-center space-y-2">
+        <div className="flex justify-center items-center gap-3">
+          <img
+            src="/FED_logo.png"
+            alt="Logo FED"
+            className="h-12 w-auto object-contain"
+          />
+          <span className="font-bold text-xl tracking-wide">AI in FED</span>
+        </div>
         <div className="space-x-4 text-sm sm:text-base">
           <Link to="/materiali" className="hover:text-fedpink">Materiali</Link>
           <Link to="/promptoteca" className="hover:text-fedpink">Promptoteca</Link>
@@ -20,6 +24,13 @@ function Navbar() {
     </nav>
   );
 }
+
+
+
+
+
+
+
 
 
 // HOME
